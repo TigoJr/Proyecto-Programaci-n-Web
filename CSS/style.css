@@ -130,6 +130,11 @@ body {
     justify-content: end;
 }
 
+.barra .enlace-login {
+    text-decoration: none;
+    color: #4e4d4d;
+}
+
 .barra .boton {
     margin: 20px 10px;
     min-width: 180px;
@@ -147,7 +152,7 @@ body {
 .barra .boton.crear-receta:hover {
     background-color: #d36b25;
 }
-
+.barra .enlace-login,
 .barra .boton.iniciar-sesion:hover {
     background-color: #f9f9f9;
     color: #000;
@@ -425,7 +430,7 @@ section h3 {
         justify-content: center;
         padding-left: 0;
     }
-    
+
     /* Ajustes en el encabezado */
     .encabezado {
         flex-direction: column;
