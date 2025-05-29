@@ -418,7 +418,6 @@ section h3 {
         width: 250px;
     }
 
-    /* Ocultar texto en enlaces cuando el menú está colapsado */
     .barra-lateral:not(.abierta) .titulo,
     .barra-lateral:not(.abierta) .logo button,
     .barra-lateral:not(.abierta) .logo span {
@@ -431,7 +430,6 @@ section h3 {
         padding-left: 0;
     }
 
-    /* Ajustes en el encabezado */
     .encabezado {
         flex-direction: column;
         padding-top: 8px;
@@ -464,12 +462,10 @@ section h3 {
         display: none;
     }
 
-    /* Ajustes en el contenido */
     .contenido-inicio {
         padding: 20px 0px;
     }
 
-    /* Rejilla para tablet */
     .rejilla {
         grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
         gap: 12px;
@@ -479,7 +475,6 @@ section h3 {
         height: 100px;
     }
 
-    /* Pie de página */
     .pie-pagina {
         padding: 30px 20px;
     }
