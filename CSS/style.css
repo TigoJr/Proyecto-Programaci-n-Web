@@ -1,29 +1,4 @@
-.material-icons {
-    font-family: 'Material Icons';
-    font-weight: normal;
-    font-style: normal;
-    font-size: 24px;
-    /* Preferred icon size */
-    display: inline-block;
-    line-height: 1;
-    text-transform: none;
-    letter-spacing: normal;
-    word-wrap: normal;
-    white-space: nowrap;
-    direction: ltr;
-
-    /* Support for all WebKit browsers. */
-    -webkit-font-smoothing: antialiased;
-    /* Support for Safari and Chrome. */
-    text-rendering: optimizeLegibility;
-
-    /* Support for Firefox. */
-    -moz-osx-font-smoothing: grayscale;
-
-    /* Support for IE. */
-    font-feature-settings: 'liga';
-}
-
+/* Estilos base y reset */
 * {
     box-sizing: border-box;
     margin: 0;
@@ -36,19 +11,40 @@ body {
     height: 100vh;
 }
 
-.container {
+/* Iconos Material */
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    -moz-osx-font-smoothing: grayscale;
+    font-feature-settings: 'liga';
+}
+
+/* Estructura principal */
+.contenedor {
     display: flex;
     width: 100%;
 }
 
-.sidebar {
+/* Barra lateral */
+.barra-lateral {
     width: 250px;
     background-color: #fff;
     border-right: 1px solid #ddd;
-    padding: 20px 0px;
+    padding: 20px 0;
 }
 
-.sidebar .logo {
+.barra-lateral .logo {
     padding-left: 10px;
     font-weight: bold;
     font-size: 24px;
@@ -60,13 +56,13 @@ body {
     justify-content: space-between;
 }
 
-.sidebar .logo .logo-sidebar{
+.barra-lateral .logo .logo-barra-lateral {
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.sidebar .logo button {
+.barra-lateral .logo button {
     font-weight: bold;
     padding-right: 10px;
     border: none;
@@ -76,21 +72,22 @@ body {
     cursor: pointer;
 }
 
-.sidebar .logo button:hover {
+.barra-lateral .logo button:hover {
     color: #f58f2f;
 }
 
-.sidebar .logo img {
+.barra-lateral .logo img {
     width: 45px;
     height: 45px;
     border-radius: 50%;
 }
 
-.sidebar .logo .logo-sidebar:hover {
+.barra-lateral .logo .logo-barra-lateral:hover {
     color: #c35f1c;
 }
 
-.links a {
+/* Enlaces barra lateral */
+.enlaces a {
     padding-left: 20px;
     display: flex;
     align-items: center;
@@ -99,44 +96,47 @@ body {
     font-weight: 500;
 }
 
-.links a:hover {
+.enlaces a:hover {
     color: #ffffff;
     background-color: #ff7f27;
 }
 
-.links .icon {
+.enlaces .icono {
     padding: 10px;
 }
 
-.content {
+/* Contenido principal */
+.contenido {
     flex: 1;
-    padding: 0px;
+    padding: 0;
     background-color: #f9f9f9;
     overflow-y: auto;
 }
 
-.content .inicio{
+.contenido .contenido-inicio {
     padding: 20px 50px;
 }
 
-.content nav {
+.contenido nav {
     position: sticky;
-    top: 0px;
+    top: 0;
 }
 
-.content .bar {
+/* Barra superior */
+.barra {
     height: 70px;
     background-color: #f9f9f9;
-    position: relative;
+    display: flex;
+    justify-content: end;
 }
 
-.bar .boton {
-    position: absolute;
-    right: 20px;
-    top: 20px;
+.barra .boton {
+    margin: 20px 10px;
+    min-width: 180px;
+    min-height: 40px;
 }
 
-.bar button {
+.barra button {
     font-weight: bold;
     padding: 10px 30px;
     border: none;
@@ -144,35 +144,36 @@ body {
     cursor: pointer;
 }
 
-.bar .boton.create_recipe:hover {
+.barra .boton.crear-receta:hover {
     background-color: #d36b25;
 }
 
-.bar .boton.login:hover {
+.barra .boton.iniciar-sesion:hover {
     background-color: #f9f9f9;
-    color: #000000;
+    color: #000;
 }
 
-.bar .boton.login {
+.barra .boton.iniciar-sesion {
     border: 1px solid #333;
     background-color: white;
     color: #555;
     right: 210px;
 }
 
-.bar .boton.create_recipe{
+.barra .boton.crear-receta {
     background-color: #ff7f27;
     color: #fff;
 }
 
-.header {
+/* Encabezado */
+.encabezado {
     text-align: center;
     margin-bottom: 40px;
     align-items: center;
     justify-content: center;
 }
 
-.logo-center {
+.logo-centro {
     font-size: 32px;
     margin-bottom: 20px;
     color: #502314;
@@ -181,7 +182,7 @@ body {
     justify-content: center;
 }
 
-.logo-center img {
+.logo-centro img {
     height: 65px;
     width: 65px;
     border-radius: 50%;
@@ -189,19 +190,20 @@ body {
     padding: 1px;
 }
 
-.logo-center span {
+.logo-centro span {
     padding-left: 15px;
     font-weight: bold;
     color: #502314;
 }
 
-.search-bar {
+/* Barra de búsqueda */
+.barra-busqueda {
     display: flex;
     justify-content: center;
     gap: 10px;
 }
 
-.search-bar input {
+.barra-busqueda input {
     width: 50%;
     padding: 10px;
     font-size: 16px;
@@ -209,7 +211,7 @@ body {
     border: 1px solid #ccc;
 }
 
-.search-bar button {
+.barra-busqueda button {
     font-weight: bold;
     padding: 10px 20px;
     background-color: #ff7f27;
@@ -219,28 +221,32 @@ body {
     cursor: pointer;
 }
 
-.search-bar button:hover {
+.barra-busqueda button:hover {
     background-color: #d36b25;
 }
 
-.popular-searches h2 {
+/* Secciones de contenido */
+.busquedas-populares h2,
+.busquedas-pollo h3,
+.busquedas-carne h3,
+.busquedas-papa h3 {
     margin-bottom: 20px;
     color: #1c1b1b;
 }
 
 section h3 {
-    margin-top: 32px;
-    margin-bottom: 16px;
+    margin: 32px 0 16px;
     color: #555;
 }
 
-.grid {
+/* Rejilla de elementos */
+.rejilla {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 16px;
 }
 
-.item {
+.elemento {
     text-decoration: none;
     background-size: cover;
     background-position: center;
@@ -252,41 +258,42 @@ section h3 {
     padding: 10px;
     border-radius: 10px;
     background-color: #00000044;
-    text-shadow: 0px 0px 5px black;
+    text-shadow: 0 0 5px black;
 }
 
-.item span {
+.elemento span {
     text-decoration: none;
     color: #ffffff;
     font-weight: 500;
 }
 
-.item.searches:hover {
+.elemento.busqueda:hover {
     transform: translateY(-4px);
     box-shadow: 0 5px 15px #0000004d;
 }
 
-.item button {
+.elemento button {
     background-color: transparent;
     color: #ffffff;
     border: none;
     cursor: pointer;
 }
 
-.item button:hover {
+.elemento button:hover {
     color: #ffdbc2;
 }
 
-.item-recipe{
+/* Elementos de receta */
+.elemento-receta {
     box-shadow: 0 5px 15px #0d0d0d4d;
     border-radius: 5%;
 }
 
-.item-recipe .item{
+.elemento-receta .elemento {
     justify-content: space-between;
 }
 
-.item-recipe .description .user{
+.elemento-receta .descripcion .usuario {
     margin: 20px 10px;
     text-decoration: none;
     color: #333;
@@ -294,47 +301,49 @@ section h3 {
     align-items: center;
 }
 
-.item-recipe .item span:hover {
+.elemento-receta .elemento span:hover {
     text-decoration: underline;
     color: #d1d1d1;
 }
 
-.footer {
+/* Pie de página */
+.pie-pagina {
     background-color: #fff;
     padding: 40px 30px 20px;
     border-top: 1px solid #ddd;
     margin-top: 50px;
 }
 
-.footer-content {
+.contenido-pie {
     display: flex;
     flex-wrap: wrap;
     gap: 40px;
     justify-content: space-between;
 }
 
-.footer-section {
+.seccion-pie {
     flex: 1 1 300px;
 }
 
-.footer-section h3 {
+.seccion-pie h3 {
     margin-bottom: 10px;
     color: #502314;
 }
 
-.footer-section p {
+.seccion-pie p {
     margin-bottom: 10px;
     line-height: 1.5;
     color: #555;
 }
 
-.comment-form {
+/* Formulario de comentarios */
+.formulario-comentario {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
 
-.comment-form textarea {
+.formulario-comentario textarea {
     resize: vertical;
     min-height: 80px;
     padding: 10px;
@@ -343,7 +352,7 @@ section h3 {
     border: 1px solid #ccc;
 }
 
-.comment-form button {
+.formulario-comentario button {
     align-self: flex-start;
     padding: 8px 16px;
     background-color: #ff7f27;
@@ -353,25 +362,27 @@ section h3 {
     cursor: pointer;
 }
 
-.comment-form button:hover {
+.formulario-comentario button:hover {
     background-color: #d36b25;
 }
 
-.footer-section ul {
+/* Lista de enlaces */
+.seccion-pie ul {
     list-style: none;
     padding: 0;
 }
 
-.footer-section ul li {
+.seccion-pie ul li {
     margin-bottom: 8px;
 }
 
-.footer-section ul li a {
+.seccion-pie ul li a {
     text-decoration: none;
     color: #333;
 }
 
-.footer-bottom {
+/* Parte inferior del pie */
+.fondo-pie {
     text-align: center;
     margin-top: 30px;
     border-top: 1px solid #ddd;
@@ -380,6 +391,120 @@ section h3 {
     color: #777;
 }
 
-.footer-section.link a:hover {
+.seccion-pie.enlaces a:hover {
     text-decoration: underline;
+}
+
+/* Media Queries para Tablet (768px - 1024px) */
+@media (min-width: 768px) and (max-width: 1024px) {
+
+    /* Barra lateral colapsada por defecto */
+    .barra-lateral {
+        width: 70px;
+        overflow: hidden;
+        transition: width 0.3s ease;
+    }
+
+    .barra-lateral.abierta {
+        width: 250px;
+    }
+
+    /* Ocultar texto en enlaces cuando el menú está colapsado */
+    .barra-lateral:not(.abierta) .titulo,
+    .barra-lateral:not(.abierta) .logo button,
+    .barra-lateral:not(.abierta) .logo span {
+        display: none;
+    }
+    
+    .barra-lateral:not(.abierta) .enlaces .icono,
+    .barra-lateral:not(.abierta) .logo {
+        justify-content: center;
+        padding-left: 0;
+    }
+
+    /* Botón para expandir/colapsar menú */
+    .boton-menu {
+        display: block;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1000;
+        background: #ff7f27;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 40px;
+        height: 40px;
+        font-size: 20px;
+        cursor: pointer;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+
+    /* Ajustes en el encabezado */
+    .encabezado {
+        flex-direction: column;
+        padding-top: 60px;
+    }
+
+    .logo-centro {
+        margin-bottom: 15px;
+    }
+
+    .barra-busqueda {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .barra-busqueda input {
+        width: 70%;
+    }
+
+    /* Ajustes en la barra superior */
+    .barra {
+        height: 60px;
+    }
+
+    .barra .boton {
+        top: 15px;
+    }
+
+    .barra .boton.iniciar-sesion {
+        right: 180px;
+    }
+
+    /* Ajustes en el contenido */
+    .contenido-inicio {
+        padding: 20px;
+    }
+
+    /* Rejilla para tablet */
+    .rejilla {
+        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+        gap: 12px;
+    }
+
+    .elemento {
+        height: 100px;
+    }
+
+    /* Pie de página */
+    .pie-pagina {
+        padding: 30px 20px;
+    }
+
+    .contenido-pie {
+        gap: 30px;
+    }
+
+    .seccion-pie {
+        flex: 1 1 250px;
+    }
+}
+
+/* Media Queries para Móvil (767 */
+@media (max-width: 767px) {
+    .barra,
+    .barra-lateral {
+        display: none;
+    }
 }
