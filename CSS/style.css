@@ -407,25 +407,20 @@ section h3 {
 /* Media Queries para Tablet (768px - 1024px) */
 @media (min-width: 768px) and (max-width: 1024px) {
 
-    /* Barra lateral colapsada por defecto */
     .barra-lateral {
         width: 70px;
         overflow: hidden;
         transition: width 0.3s ease;
     }
 
-    .barra-lateral.abierta {
-        width: 250px;
-    }
-
-    .barra-lateral:not(.abierta) .titulo,
-    .barra-lateral:not(.abierta) .logo button,
-    .barra-lateral:not(.abierta) .logo span {
+    .barra-lateral .titulo,
+    .barra-lateral .logo button,
+    .barra-lateral .logo span {
         display: none;
     }
 
-    .barra-lateral:not(.abierta) .enlaces .icono,
-    .barra-lateral:not(.abierta) .logo {
+    .barra-lateral .enlaces .icono,
+    .barra-lateral .logo {
         justify-content: center;
         padding-left: 0;
     }
