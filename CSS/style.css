@@ -203,6 +203,10 @@ body {
     gap: 10px;
 }
 
+.barra-busqueda .boton-menu-movil {
+    display: none;
+}
+
 .barra-busqueda input {
     width: 50%;
     padding: 10px;
@@ -415,39 +419,31 @@ section h3 {
     .barra-lateral:not(.abierta) .logo span {
         display: none;
     }
-    
+
     .barra-lateral:not(.abierta) .enlaces .icono,
     .barra-lateral:not(.abierta) .logo {
         justify-content: center;
         padding-left: 0;
     }
-
-    /* Botón para expandir/colapsar menú */
-    .boton-menu {
-        display: block;
-        position: fixed;
-        top: 20px;
-        left: 20px;
-        z-index: 1000;
-        background: #ff7f27;
-        color: white;
-        border: none;
-        border-radius: 50%;
-        width: 40px;
-        height: 40px;
-        font-size: 20px;
-        cursor: pointer;
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-
+    
     /* Ajustes en el encabezado */
     .encabezado {
         flex-direction: column;
-        padding-top: 60px;
+        padding-top: 8px;
     }
 
     .logo-centro {
-        margin-bottom: 15px;
+        font-size: 30px;
+        margin-bottom: 16px;
+    }
+
+    .logo-centro img {
+        height: 50px;
+        width: 50px;
+    }
+
+    .logo-centro span {
+        padding-left: 10px;
     }
 
     .barra-busqueda {
@@ -456,25 +452,16 @@ section h3 {
     }
 
     .barra-busqueda input {
-        width: 70%;
+        width: 75%;
     }
 
-    /* Ajustes en la barra superior */
     .barra {
-        height: 60px;
-    }
-
-    .barra .boton {
-        top: 15px;
-    }
-
-    .barra .boton.iniciar-sesion {
-        right: 180px;
+        display: none;
     }
 
     /* Ajustes en el contenido */
     .contenido-inicio {
-        padding: 20px;
+        padding: 20px 0px;
     }
 
     /* Rejilla para tablet */
@@ -503,8 +490,46 @@ section h3 {
 
 /* Media Queries para Móvil (767 */
 @media (max-width: 767px) {
+
+    .barra-busqueda .boton-buscar,
     .barra,
     .barra-lateral {
         display: none;
+    }
+
+    .barra-busqueda .boton-menu-movil {
+        display: block;
+    }
+
+    .logo-centro {
+        font-size: 24px;
+        margin-bottom: 16px;
+        justify-content: start;
+    }
+
+    .logo-centro img {
+        height: 40px;
+        width: 40px;
+    }
+
+    .logo-centro span {
+        padding-left: 10px;
+    }
+
+    .contenido {
+        margin-left: 0;
+    }
+
+    .rejilla {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+
+    .barra-busqueda {
+        justify-content: center;
+        gap: 10px;
+    }
+
+    .barra-busqueda input {
+        width: 85%;
     }
 }
