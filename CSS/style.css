@@ -44,15 +44,6 @@ body {
     background-color: var(--color-fondo);
 }
 
-main {
-    padding: 2rem 3rem 3rem 17rem;
-    transition: padding 0.5s ease;
-}
-
-body.barra-minimizada main {
-    padding-left: 7.96rem;
-}
-
 .contenido {
     flex: 1;
     background-color: #f9f9f9;
