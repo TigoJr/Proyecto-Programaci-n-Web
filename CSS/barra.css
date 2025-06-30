@@ -237,8 +237,83 @@
     box-shadow: 0 -0.02rem 0 0 var(--color-borde);
 }
 
+.login-btn {
+    display: inline-block;
+    padding: 12px 28px;
+    background: linear-gradient(135deg, #ff701e, #ffa425);
+    color: #fff;
+    border: none;
+    border-radius: 30px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 15px rgba(255, 179, 71, 0.3);
+    transition: all 0.4s cubic-bezier(0.65, 0, 0.35, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.login-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(255, 179, 71, 0.4);
+    background: linear-gradient(135deg, #FFB347, #FFCC33);
+}
+
+.login-btn:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 10px rgba(255, 179, 71, 0.3);
+}
+
+.login-btn::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 5px;
+    height: 5px;
+    background: rgba(255, 255, 255, 0.6);
+    opacity: 0;
+    border-radius: 100%;
+    transform: scale(1, 1) translate(-50%);
+    transform-origin: 50% 50%;
+}
+
+.login-btn:focus:not(:active)::after {
+    animation: ripple 0.6s ease-out;
+}
+
+.login-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-radius: 30px;
+    box-shadow: inset 0 -2px 4px rgba(0, 0, 0, 0.1);
+    pointer-events: none;
+}
+
+@keyframes ripple {
+    0% {
+        transform: scale(0, 0);
+        opacity: 1;
+    }
+
+    100% {
+        transform: scale(20, 20);
+        opacity: 0;
+    }
+}
+
+.menu-footer ul {
+    display: none;
+}
+
 .usuario {
-    display: flex;
+    display: none;
     margin-top: 1rem;
     overflow: hidden;
 }
@@ -350,7 +425,7 @@ body.barra-minimizada main {
         display: none;
     }
 
-    main { 
+    main {
         padding: 2rem;
     }
 }
