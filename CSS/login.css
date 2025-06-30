@@ -49,7 +49,7 @@ body {
 }
 
 .formularios.activo {
-    transform: translateY(-51%);
+    transform: translateY(-50%);
 }
 
 form {
