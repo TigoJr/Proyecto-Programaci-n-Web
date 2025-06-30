@@ -1,17 +1,24 @@
-/* Estilos base y reset */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    font-family: 'Segoe UI', sans-serif;
+    font-family: "Poppins", sans-serif;
 }
 
-body {
-    display: flex;
-    height: 100vh;
+:root {
+    --color-fondo: #EBECF2;
+    --color-superficie: #FFFFFF;
+    --color-borde: #9A9EB2;
+    --color-texto-primario: #000;
+    --color-texto-secundario: #3F435D;
+    --color-fondo-ayuda: #2A2E33;
+    --color-texto-ayuda: #fff;
+    --sombra-borde: rgba(0, 0, 0, 0.1);
+    --color-fondo-usuario: #FAFAFC;
 }
 
-/* Iconos Material */
 .material-icons {
     font-family: 'Material Icons';
     font-weight: normal;
@@ -30,144 +37,26 @@ body {
     font-feature-settings: 'liga';
 }
 
-/* Estructura principal */
-.contenedor {
+body {
     display: flex;
     width: 100%;
+    height: 100vh;
+    background-color: var(--color-fondo);
 }
 
-/* Barra lateral */
-.barra-lateral {
-    width: 250px;
-    background-color: #fff;
-    border-right: 1px solid #ddd;
-    padding: 20px 0;
+main {
+    padding: 2rem 3rem 3rem 17rem;
+    transition: padding 0.5s ease;
 }
 
-.barra-lateral .logo {
-    padding-left: 10px;
-    font-weight: bold;
-    font-size: 24px;
-    margin-bottom: 35px;
-    color: #ff7f27;
-    display: flex;
-    text-decoration: none;
-    align-items: center;
-    justify-content: space-between;
+body.barra-minimizada main {
+    padding-left: 7.96rem;
 }
 
-.barra-lateral .logo .logo-barra-lateral {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-.barra-lateral .logo button {
-    font-weight: bold;
-    padding-right: 10px;
-    border: none;
-    border-radius: 8px;
-    color: #4e4d4d;
-    background-color: transparent;
-    cursor: pointer;
-}
-
-.barra-lateral .logo button:hover {
-    color: #f58f2f;
-}
-
-.barra-lateral .logo img {
-    width: 45px;
-    height: 45px;
-    border-radius: 50%;
-}
-
-.barra-lateral .logo .logo-barra-lateral:hover {
-    color: #c35f1c;
-}
-
-/* Enlaces barra lateral */
-.enlaces a {
-    padding-left: 20px;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    color: #333;
-    font-weight: 500;
-}
-
-.enlaces a:hover {
-    color: #ffffff;
-    background-color: #ff7f27;
-}
-
-.enlaces .icono {
-    padding: 10px;
-}
-
-/* Contenido principal */
 .contenido {
     flex: 1;
-    padding: 0;
     background-color: #f9f9f9;
     overflow-y: auto;
-}
-
-.contenido .contenido-inicio {
-    padding: 20px 50px;
-}
-
-.contenido nav {
-    position: sticky;
-    top: 0;
-}
-
-/* Barra superior */
-.barra {
-    height: 70px;
-    background-color: #f9f9f9;
-    display: flex;
-    justify-content: end;
-}
-
-.barra .enlace-login {
-    text-decoration: none;
-    color: #4e4d4d;
-}
-
-.barra .boton {
-    margin: 20px 10px;
-    min-width: 180px;
-    min-height: 40px;
-}
-
-.barra button {
-    font-weight: bold;
-    padding: 10px 30px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.barra .boton.crear-receta:hover {
-    background-color: #d36b25;
-}
-.barra .enlace-login,
-.barra .boton.iniciar-sesion:hover {
-    background-color: #f9f9f9;
-    color: #000;
-}
-
-.barra .boton.iniciar-sesion {
-    border: 1px solid #333;
-    background-color: white;
-    color: #555;
-    right: 210px;
-}
-
-.barra .boton.crear-receta {
-    background-color: #ff7f27;
-    color: #fff;
 }
 
 /* Encabezado */
@@ -199,39 +88,6 @@ body {
     padding-left: 15px;
     font-weight: bold;
     color: #502314;
-}
-
-/* Barra de búsqueda */
-.barra-busqueda {
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.barra-busqueda .boton-menu-movil {
-    display: none;
-}
-
-.barra-busqueda input {
-    width: 50%;
-    padding: 10px;
-    font-size: 16px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-}
-
-.barra-busqueda button {
-    font-weight: bold;
-    padding: 10px 20px;
-    background-color: #ff7f27;
-    color: #fff;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-}
-
-.barra-busqueda button:hover {
-    background-color: #d36b25;
 }
 
 /* Secciones de contenido */
@@ -402,129 +258,4 @@ section h3 {
 
 .seccion-pie.enlaces a:hover {
     text-decoration: underline;
-}
-
-/* Media Queries para Tablet (768px - 1024px) */
-@media (min-width: 768px) and (max-width: 1024px) {
-
-    .barra-lateral {
-        width: 70px;
-        overflow: hidden;
-        transition: width 0.3s ease;
-    }
-
-    .barra-lateral .titulo,
-    .barra-lateral .logo button,
-    .barra-lateral .logo span {
-        display: none;
-    }
-
-    .barra-lateral .enlaces .icono,
-    .barra-lateral .logo {
-        justify-content: center;
-        padding-left: 0;
-    }
-
-    .encabezado {
-        flex-direction: column;
-        padding-top: 8px;
-    }
-
-    .logo-centro {
-        font-size: 30px;
-        margin-bottom: 16px;
-    }
-
-    .logo-centro img {
-        height: 50px;
-        width: 50px;
-    }
-
-    .logo-centro span {
-        padding-left: 10px;
-    }
-
-    .barra-busqueda {
-        width: 100%;
-        margin-bottom: 20px;
-    }
-
-    .barra-busqueda input {
-        width: 75%;
-    }
-
-    .barra {
-        display: none;
-    }
-
-    .contenido-inicio {
-        padding: 20px 0px;
-    }
-
-    .rejilla {
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-        gap: 12px;
-    }
-
-    .elemento {
-        height: 100px;
-    }
-
-    .pie-pagina {
-        padding: 30px 20px;
-    }
-
-    .contenido-pie {
-        gap: 30px;
-    }
-
-    .seccion-pie {
-        flex: 1 1 250px;
-    }
-}
-
-/* Media Queries para Móvil (767 */
-@media (max-width: 767px) {
-
-    .barra-busqueda .boton-buscar,
-    .barra,
-    .barra-lateral {
-        display: none;
-    }
-
-    .barra-busqueda .boton-menu-movil {
-        display: block;
-    }
-
-    .logo-centro {
-        font-size: 24px;
-        margin-bottom: 16px;
-        justify-content: start;
-    }
-
-    .logo-centro img {
-        height: 40px;
-        width: 40px;
-    }
-
-    .logo-centro span {
-        padding-left: 10px;
-    }
-
-    .contenido {
-        margin-left: 0;
-    }
-
-    .rejilla {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-    }
-
-    .barra-busqueda {
-        justify-content: center;
-        gap: 10px;
-    }
-
-    .barra-busqueda input {
-        width: 85%;
-    }
 }
