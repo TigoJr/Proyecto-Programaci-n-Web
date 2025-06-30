@@ -1,160 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: "Segoe UI", sans-serif;
+    font-family: "Montserrat", sans-serif;
+}
+
+:root {
+    --color-primario: #925FE2;
+    --color-secundario: #6D4EA1;
+    --color-fondo: #D9F7C2;
+    --color-fondo-form: #FFFFFF;
+    --color-texto-primario: #000000;
+    --color-texto-secundario: #656565;
+    --color-borde: #CDCDCD;
+    --color-boton-texto: #FFFFFF;
+    --color-icon-google: #DB4437;
+    --color-icon-facebook: #4267B2;
+    --color-titulo: #F7F3FA;
 }
 
 body {
-    background: #fff8f0;
     display: flex;
     align-items: center;
     justify-content: center;
+    width: 100%;
     height: 100vh;
-    padding: 10px;
+    background-color: var(--color-fondo);
 }
 
 .container {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    width: 800px;
-    max-width: 100%;
-    box-shadow: 0 0 30px rgba(214, 10, 10, 0.1);
-    border-radius: 20px;
-    overflow: hidden;
-    background-color: white;
-    transition: all 0.4s ease-in-out;
+    grid-template-columns: 4.2fr 5fr 0.8fr;
+    width: 57.27rem;
+    height: 31rem;
+    align-items: center;
 }
 
-.image-section {
-    flex: 1;
-    overflow: hidden;
-}
-
-.animated-img {
-    width: 100%;
+.forms-container {
     height: 100%;
-    object-fit: cover;
-    transition: transform 2s ease-in-out;
-}
-
-.image-section:hover .animated-img {
-    transform: scale(1.1);
-}
-
-.login-section {
-    flex: 1;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    animation: fadeIn 1s ease forwards;
-}
-
-h2 {
-    font-family: "Kapakana";
-    margin-bottom: 20px;
-    color: #e67e22;
-    text-align: center;
-    font-size: 28px;
-}
-
-.sombrero {
-    width: 30px;
-    height: 30px;
-    object-fit: contain;
+    background-color: var(--color-fondo-form);
+    overflow: hidden;
 }
 
 form {
+    padding: 1.8rem;
+}
+
+form p {
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--color-texto-secundario);
+    margin-top: 0.3rem;
+    margin-bottom: 1.8rem;
+}
+
+form p a {
+    color: var(--color-primario);
+    font-weight: 700;
+}
+
+.entrada-container {
     display: flex;
     flex-direction: column;
+    gap: 0.5rem;
+    margin-bottom: 1.2rem;
 }
 
-input {
-    padding: 12px;
-    margin-bottom: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: border-color 0.3s;
-}
-
-.correo:focus {
-    border-color: #e67e22;
+.entrada-container input {
+    padding: 0.7rem;
+    border: 2px solid var(--color-borde);
+    border-radius: 0.4rem;
     outline: none;
 }
 
-.contraseña:focus {
-    border-color: #e67e22;
-    outline: none;
+.entrada-container a,
+.entrada-container label {
+    font-size: 0.8rem;
+    font-weight: 600;
 }
 
-.animated-btn {
-    padding: 12px;
+.entrada-container a {
+    color: var(--color-texto-primario);
+}
+
+.entrada-container .olvidado {
+    display: flex;
+    justify-content: space-between;
+}
+
+.recuerdame {
+    display: flex;
+    gap: 0.3rem;
+    margin-bottom: 1.7rem;
+}
+
+.recuerdame label {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: var(--color-texto-secundario);
+}
+
+form button {
+    width: 100%;
+    padding: 0.9rem 0;
+    background-color: var(--color-secundario);
+    color: var(--color-boton-texto);
+    font-weight: 500;
     border: none;
-    border-radius: 8px;
-    background-color: #e67e22;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    font-weight: bold;
-    font-size: 16px;
+    border-radius: 0.5rem;
+    margin-bottom: 0.3rem;
     cursor: pointer;
-    transition: transform 0.3s, background-color 0.3s;
 }
 
-.animated-btn:hover {
-    background-color: #9e3a12;
-    transform: scale(1.05);
+form .registrar-btn {
+    margin-top: 1.5rem;
 }
 
-p {
-    margin-top: 15px;
-    text-align: center;
-    font-size: 14px;
+.linea-texto {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-texto-secundario);
+    font-size: 0.8rem;
+    margin-top: 1rem;
+    margin-bottom: 1.3rem;
 }
 
-a {
-    color: #e67e22;
+.linea-texto::before,
+.linea-texto::after {
+    content: '';
+    flex: 1;
+    border-bottom: 1px solid var(--color-borde);
+    margin: 0 0.6rem;
+}
+
+.otro-login {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.otro-login a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.65rem;
+    font-weight: 700;
+    padding: 0.6rem 1.5rem;
+    gap: 0.5rem;
+    border-radius: 0.4rem;
     text-decoration: none;
 }
 
-/* Animación */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(30px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.otro-login img {
+    width: 1rem;
 }
 
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        height: auto;
-    }
+.otro-login .google {
+    border: 1px solid var(--color-icon-google);
+    color: var(--color-icon-google);
+    cursor: pointer;
+}
 
-    .image-section {
-        height: 200px;
-    }
+.otro-login .facebook {
+    border: 1px solid var(--color-icon-facebook);
+    color: var(--color-icon-facebook);
+    cursor: pointer;
+}
 
-    .login-section {
-        padding: 30px 20px;
-    }
+.banner {
+    position: relative;
+    height: 115%;
+    padding: 5rem 2rem 0 2rem;
+    background-color: var(--color-primario);
+}
 
-    h2 {
-        font-size: 24px;
-    }
+.banner h1 {
+    color: var(--color-titulo);
+    font-size: 3rem;
+    line-height: 3rem;
+}
 
-    input,
-    .animated-btn {
-        font-size: 15px;
-    }
+.banner h1 span{
+    display: block;
+    font-weight: 500;
+}
 
-    p {
-        font-size: 13px;
-    }
+.banner p {
+    color: var(--color-fondo-form);
+    font-size: 0.8rem;
+    margin-top: 1rem;
+}
+
+.banner img {
+    position: absolute;
+    bottom: 0;
+    left: 1.4rem;
+    width: 95% ;
 }

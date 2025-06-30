@@ -6,8 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Recipepad - Recetas</title>
     <link rel="icon" href="Imagenes/logo_receta-icono.png" type="image/png">
-    <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icon_names=chef_hat" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href='https://cdn.boxicons.com/fonts/basic/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="CSS/barra.css">
     <link rel="stylesheet" href="CSS/style.css">
@@ -122,6 +121,10 @@
                 </div>
             </header>
 
+            <script src="JS/buscador.js"></script>
+            <section id="resultado-busqueda">
+            </section>
+
             <section class="busquedas-populares">
                 <h2>Búsquedas populares</h2>
                 <div class="rejilla">
@@ -167,9 +170,11 @@
                         <a href="#" class="elemento"
                             style="background-image: url('https://img-global.cpcdn.com/recipes/8ded7f2d37243bf9/1280x1280sq90/photo.webp');">
                             <span>Spaguetty con trozos de pollo en salsa roja</span>
+                            <button class="material-icons">bookmark</button>
                         </a>
                         <div class="descripcion">
                             <a href="#" class="usuario">
+                                <div class="material-icons"> account_circle</div>
                                 <div class="nombre">Carlos Alvarez</div>
                             </a>
                         </div>
@@ -178,9 +183,11 @@
                         <a href="#" class="elemento"
                             style="background-image: url('https://img-global.cpcdn.com/recipes/7db20e446970b0f1/1280x1280sq90/photo.webp');">
                             <span>Pollo al orégano</span>
+                            <button class="material-icons">bookmark</button>
                         </a>
                         <div class="descripcion">
                             <a href="#" class="usuario">
+                                <div class="material-icons"> account_circle</div>
                                 <div class="nombre">@nomuerasdehambre</div>
                             </a>
                         </div>
@@ -189,9 +196,11 @@
                         <a href="#" class="elemento"
                             style="background-image: url('https://img-global.cpcdn.com/recipes/30c3237459a8ff22/1280x1280sq90/photo.webp');">
                             <span>Pollo a la norteña</span>
+                            <button class="material-icons">bookmark</button>
                         </a>
                         <div class="descripcion">
                             <a href="#" class="usuario">
+                                <div class="material-icons"> account_circle</div>
                                 <div class="nombre">romagalagarza</div>
                             </a>
                         </div>
@@ -200,9 +209,11 @@
                         <a href="#" class="elemento"
                             style="background-image: url('https://img-global.cpcdn.com/recipes/d5803d3fb0ad98e1/1280x1280sq90/photo.webp    ');">
                             <span>Pollo Entomatado 🍅</span>
+                            <button class="material-icons">bookmark</button>
                         </a>
                         <div class="descripcion">
                             <a href="#" class="usuario">
+                                <div class="material-icons"> account_circle</div>
                                 <div class="nombre">Summi CB</div>
                             </a>
                         </div>
@@ -217,9 +228,11 @@
                         <a href="#" class="elemento"
                             style="background-image: url('https://img-global.cpcdn.com/recipes/0e472f6d520bc55e/1360x1928f0.5_0.459477_1.0q90/higado-frito-de-res-foto-principal.webp');">
                             <span>Hígado frito de res</span>
+                            <button class="material-icons">bookmark</button>
                         </a>
                         <div class="descripcion">
                             <a href="#" class="usuario">
+                                <div class="material-icons"> account_circle</div>
                                 <div class="nombre">romagalagarza</div>
                             </a>
                         </div>
@@ -228,9 +241,11 @@
                         <a href="#" class="elemento"
                             style="background-image: url('https://img-global.cpcdn.com/recipes/aebe29d6ed1e94dd/1280x1280sq90/photo.webp');">
                             <span>Lasaña casera de carne</span>
+                            <button class="material-icons">bookmark</button>
                         </a>
                         <div class="descripcion">
                             <a href="#" class="usuario">
+                                <div class="material-icons"> account_circle</div>
                                 <div class="nombre">Danitza Nocile</div>
                             </a>
                         </div>
@@ -239,9 +254,11 @@
                         <a href="#" class="elemento"
                             style="background-image: url('https://img-global.cpcdn.com/recipes/7aa974a1b225edc2/1280x1280sq90/photo.webp');">
                             <span>Lomo saltado(con carne de cordero)</span>
+                            <button class="material-icons">bookmark</button>
                         </a>
                         <div class="descripcion">
                             <a href="#" class="usuario">
+                                <div class="material-icons"> account_circle</div>
                                 <div class="nombre">Carla Jasmín</div>
                             </a>
                         </div>
@@ -250,9 +267,11 @@
                         <a href="#" class="elemento"
                             style="background-image: url('https://img-global.cpcdn.com/recipes/3da28089ee4195b2/1360x1928cq90/cordero-a-la-pimienta-foto-principal.webp');">
                             <span>Cordero a la Pimienta</span>
+                            <button class="material-icons">bookmark</button>
                         </a>
                         <div class="descripcion">
                             <a href="#" class="usuario">
+                                <div class="material-icons"> account_circle</div>
                                 <div class="nombre">Lily Correa</div>
                             </a>
                         </div>
@@ -267,9 +286,11 @@
                         <a href="#" class="elemento"
                             style="background-image: url('https://img-global.cpcdn.com/recipes/d2a888f462d422d6/1360x1928f0.5_0.5_1.0q90/causa-de-jurel-y-palta-foto-principal.webp');">
                             <span>Causa de jurel y palta</span>
+                            <button class="material-icons">bookmark</button>
                         </a>
                         <div class="descripcion">
                             <a href="#" class="usuario">
+                                <div class="material-icons"> account_circle</div>
                                 <div class="nombre">Carlos Alvarez</div>
                             </a>
                         </div>
@@ -278,9 +299,11 @@
                         <a href="#" class="elemento"
                             style="background-image: url('https://img-global.cpcdn.com/recipes/f46f561ada8e420b/1280x1280sq90/photo.webp');">
                             <span>Causa Rellena de Atún</span>
+                            <button class="material-icons">bookmark</button>
                         </a>
                         <div class="descripcion">
                             <a href="#" class="usuario">
+                                <div class="material-icons"> account_circle</div>
                                 <div class="nombre">Lily Correa</div>
                             </a>
                         </div>
@@ -289,9 +312,11 @@
                         <a href="#" class="elemento"
                             style="background-image: url('https://img-global.cpcdn.com/recipes/9dcae0fe27a4c7ec/1280x1280sq90/photo.webp');">
                             <span>Papa a la Huancaina</span>
+                            <button class="material-icons">bookmark</button>
                         </a>
                         <div class="descripcion">
                             <a href="#" class="usuario">
+                                <div class="material-icons"> account_circle</div>
                                 <div class="nombre">Diana Cordero</div>
                             </a>
                         </div>
@@ -300,9 +325,11 @@
                         <a href="#" class="elemento"
                             style="background-image: url('https://img-global.cpcdn.com/recipes/f7325c787cb5d907/1280x1280sq90/photo.webp');">
                             <span>Papa Rellena</span>
+                            <button class="material-icons">bookmark</button>
                         </a>
                         <div class="descripcion">
                             <a href="#" class="usuario">
+                                <div class="material-icons"> account_circle</div>
                                 <div class="nombre">Marian Gonzalez</div>
                             </a>
                         </div>
@@ -362,6 +389,7 @@
     </main>
 
     <script src="JS/script.js"></script>
+
 </body>
 
 </html>

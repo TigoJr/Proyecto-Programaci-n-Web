@@ -62,7 +62,7 @@ function verificarTamano() {
     barraLateral.classList.remove('minimizar');
 }
 
-document.querySelector('.login-btn').addEventListener('click', function() {
+document.querySelector('.login-btn').addEventListener('click', function () {
     window.location.href = 'login.html';
 });
 
