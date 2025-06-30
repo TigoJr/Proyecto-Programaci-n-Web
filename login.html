@@ -8,12 +8,12 @@
         <link rel="preconnect" href="https://fonts.googleapis.com">
     </head>
     <body>
-        <div class="container">
-            <div class="forms-container">
-                <div class="formularios">
-                    <form action="">
+        <div class="container" id="container">
+            <div class="formularios-container">
+                <div class="formularios" id="formularios">
+                    <form action="" id="iniciar-sesion">
                         <h2>Iniciar seción</h2>
-                        <p>¿No tienes una cuenta? <a href="#">Regístrate</a></p>
+                        <p>¿No tienes una cuenta? <a href="#" id="registrar-link">Regístrate</a></p>
                         <div class="entrada-container">
                             <label for="email">Email</label>
                             <input id="email" type="email" placeholder="Correo Electrónico">
@@ -29,7 +29,7 @@
                             <input type="checkbox" id="checkbox">
                             <label for="checkbox">Recuérdame</label>
                         </div>
-                        <button>INICIAR SESIÓN</button>
+                        <button><a href="index.html">INICIAR SESIÓN</a></button>
                         <div class="linea-texto">
                             <span>o iniciar sesión con</span>
                         </div>
@@ -44,9 +44,9 @@
                             </a>
                         </div>
                     </form>
-                    <form action="">
+                    <form action="" id="registrarse">
                         <h2>Registro</h2>
-                        <p>¿Ya tienes una cuenta? <a href="#">Iniciar sesión</a></p>
+                        <p>¿Ya tienes una cuenta? <a href="#" id="iniciar-sesion-link">Iniciar sesión</a></p>
                         <div class="entrada-container">
                             <label for="name">Nombre</label>
                             <input id="name" type="text" placeholder="Nombre">
@@ -55,10 +55,10 @@
                             <div class="olvidado">
                                 <label for="password">Contraseña</label>
                             </div>
-                            <input id="password" type="password" placeholder="Contraseña">
+                            <input id="password2" type="password" placeholder="Contraseña">
                         </div>
                         <div class="recuerdame">
-                            <input type="checkbox" id="checkbox">
+                            <input type="checkbox" id="checkbox2">
                             <label for="checkbox">Recuérdame</label>
                         </div>
                         <button class="registrar-btn">REGISTRAR</button>
@@ -75,9 +75,19 @@
                     <img src="Imagenes/banner_cocina.png" alt="">
                 </section>
             </div>
-            <div class="barra-lateral">
-
+            <div class="barra-lateral" id="barra-lateral">
+                <div class="signo" id="btn-inicio-sesion">
+                    <img src="iconos/crown.svg" alt="">
+                    <span>Iniciar</span>
+                    <span>sesión</span>
+                </div>
+                <div class="signo" id="btn-registro">
+                    <img src="iconos/rule.svg" alt="">
+                    <span>Registrarse</span>
+                </div>
             </div>
         </div>
+
+        <script src="JS/login.js"></script>
     </body>
 </html>
