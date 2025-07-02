@@ -111,7 +111,6 @@ loginBtn.addEventListener('click', async () => {
     modal.classList.remove('oculto');
 });
 
-// Cerrar modal con la X o clic fuera
 document.getElementById('cerrar-modal').addEventListener('click', () => {
     modal.classList.add('oculto');
 });

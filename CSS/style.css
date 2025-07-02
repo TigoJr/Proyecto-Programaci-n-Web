@@ -9,7 +9,7 @@
 }
 
 :root {
-    --color-fondo: #EBECF2;
+    --color-fondo: #FFF5E6;
     --color-superficie: #FFFFFF;
     --color-borde: #9A9EB2;
     --color-texto-primario: #000;
@@ -297,7 +297,7 @@ section h3 {
     justify-content: center;
 }
 
-@media (max-width: 700px),
+@media (max-width: 928px),
 (max-height: 657px) {
     #cerrar-modal {
         top: 0;

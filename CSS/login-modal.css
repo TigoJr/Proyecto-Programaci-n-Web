@@ -8,17 +8,17 @@
 }
 
 :root {
-    --color-primario: #FF7F27;
-    --color-secundario: #CC6520;
-    --color-fondo: #FFF5E6;
-    --color-fondo-form: #FFFFFF;
-    --color-texto-primario: #000000;
-    --color-texto-secundario: #656565;
-    --color-borde: #FFC489;
-    --color-boton-texto: #FFFFFF;
-    --color-icon-google: #DB4437;
-    --color-icon-facebook: #4267B2;
-    --color-titulo: #FFF9F0;
+    --modal--color-primario: #FF7F27;
+    --modal--color-secundario: #CC6520;
+    --modal--color-fondo: #FFF5E6;
+    --modal--color-fondo-form: #FFFFFF;
+    --modal--color-texto-primario: #000000;
+    --modal--color-texto-secundario: #656565;
+    --modal--color-borde: #FFC489;
+    --modal--color-boton-texto: #FFFFFF;
+    --modal--color-icon-google: #DB4437;
+    --modal--color-icon-facebook: #4267B2;
+    --modal--color-titulo: #FFF9F0;
 }
 
 .login-modal .container {
@@ -31,7 +31,7 @@
 
 .login-modal .formularios-container {
     height: 100%;
-    background-color: var(--color-fondo-form);
+    background-color: var(--modal--color-fondo-form);
     overflow: hidden;
 }
 
@@ -50,14 +50,14 @@
 .login-modal form p {
     font-size: 0.85rem;
     font-weight: 500;
-    color: var(--color-texto-secundario);
+    color: var(--modal--color-texto-secundario);
     margin-top: 0.3rem;
     margin-bottom: 1.8rem;
 }
 
 .login-modal form p a,
 .login-modal form .olvidado a {
-    color: var(--color-primario);
+    color: var(--modal--color-primario);
     font-weight: 700;
 }
 
@@ -70,7 +70,7 @@
 
 .login-modal .entrada-container input {
     padding: 0.7rem;
-    border: 2px solid var(--color-borde);
+    border: 2px solid var(--modal--color-borde);
     border-radius: 0.4rem;
     outline: none;
     width: 100%;
@@ -83,7 +83,7 @@
 }
 
 .login-modal .entrada-container a {
-    color: var(--color-texto-primario);
+    color: var(--modal--color-texto-primario);
 }
 
 .login-modal .entrada-container .olvidado {
@@ -100,14 +100,14 @@
 .login-modal .recuerdame label {
     font-size: 0.8rem;
     font-weight: 500;
-    color: var(--color-texto-secundario);
+    color: var(--modal--color-texto-secundario);
 }
 
 .login-modal form button {
     width: 100%;
     padding: 0.9rem 0;
-    background-color: var(--color-primario);
-    color: var(--color-boton-texto);
+    background-color: var(--modal--color-primario);
+    color: var(--modal--color-boton-texto);
     font-weight: 500;
     border: none;
     border-radius: 0.5rem;
@@ -123,7 +123,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--color-texto-secundario);
+    color: var(--modal--color-texto-secundario);
     font-size: 0.8rem;
     margin-top: 1rem;
     margin-bottom: 1.3rem;
@@ -133,7 +133,7 @@
 .login-modal .linea-texto::after {
     content: '';
     flex: 1;
-    border-bottom: 1px solid var(--color-borde);
+    border-bottom: 1px solid var(--modal--color-borde);
     margin: 0 0.6rem;
 }
 
@@ -160,14 +160,14 @@
 }
 
 .login-modal .otro-login .google {
-    border: 1px solid var(--color-icon-google);
-    color: var(--color-icon-google);
+    border: 1px solid var(--modal--color-icon-google);
+    color: var(--modal--color-icon-google);
     cursor: pointer;
 }
 
 .login-modal .otro-login .facebook {
-    border: 1px solid var(--color-icon-facebook);
-    color: var(--color-icon-facebook);
+    border: 1px solid var(--modal--color-icon-facebook);
+    color: var(--modal--color-icon-facebook);
     cursor: pointer;
 }
 
@@ -176,11 +176,11 @@
     height: 115%;
     overflow: hidden;
     padding: 5rem 2rem 0 2rem;
-    background-color: var(--color-primario);
+    background-color: var(--modal--color-primario);
 }
 
 .login-modal .banner h1 {
-    color: var(--color-titulo);
+    color: var(--modal--color-titulo);
     font-size: 3rem;
     line-height: 3rem;
 }
@@ -191,7 +191,7 @@
 }
 
 .login-modal .banner p {
-    color: var(--color-fondo-form);
+    color: var(--modal--color-fondo-form);
     font-size: 0.8rem;
     margin-top: 1rem;
 }
@@ -232,7 +232,7 @@
 }
 
 .login-modal .barra-lateral {
-    background-color: var(--color-fondo-form);
+    background-color: var(--modal--color-fondo-form);
     display: flex;
     flex-direction: column;
     height: 100%;
@@ -243,7 +243,7 @@
 
 .login-modal .barra-lateral::after {
     content: '';
-    background-color: var(--color-primario);
+    background-color: var(--modal--color-primario);
     height: 50%;
     width: 0.3rem;
     position: absolute;
@@ -272,7 +272,7 @@
 }
 
 .login-modal .barra-lateral span {
-    color: var(--color-texto-secundario);
+    color: var(--modal--color-texto-secundario);
     font-size: 0.8rem;
     line-height: 0.5rem;
 }
@@ -325,7 +325,7 @@
     }
 }
 
-@media (max-width: 700px),
+@media (max-width: 928px),
 (max-height: 657px) {
     .login-modal .banner,
     .login-modal .barra-lateral {

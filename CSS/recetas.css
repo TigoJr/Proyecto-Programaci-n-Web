@@ -1,31 +1,31 @@
-/* === Estilos para el recetario detallado === */
+/* === Estilos para receta detallada === */
 .receta-detalle {
-    max-width: 800px;
-    margin: 30px auto;
+    max-width: 1000px;
+    margin: 40px auto;
     background-color: #fff;
     border-radius: 16px;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     overflow: hidden;
     font-family: 'Segoe UI', sans-serif;
-    animation: fadeIn 0.5s ease-in-out;
+    animation: fadeIn 0.5s ease;
 }
 
+/* === Cabecera con imagen y título === */
 .receta-header {
     display: flex;
-    flex-direction: row;
     align-items: center;
     gap: 20px;
     padding: 20px;
     border-bottom: 1px solid #eee;
-    background-color: #fdfdfd;
+    background-color: #fafafa;
 }
 
 .receta-header img {
-    width: 180px;
-    height: 180px;
+    width: 200px;
+    height: 200px;
     object-fit: cover;
     border-radius: 12px;
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
 }
 
 .receta-info {
@@ -33,47 +33,45 @@
 }
 
 .receta-info h2 {
-    margin: 0;
     font-size: 28px;
+    margin: 0;
     color: #333;
 }
 
 .receta-info .autor {
-    color: #888;
+    margin-top: 8px;
     font-size: 16px;
-    margin-top: 6px;
+    color: #777;
 }
 
-.receta-info .descripcion {
-    color: #555;
-    margin-top: 12px;
-}
-
+/* === Contenido de la receta (ingredientes y pasos) === */
 .receta-contenido {
-    padding: 20px;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    padding: 20px;
     gap: 20px;
 }
 
 .receta-contenido h3 {
+    margin-bottom: 10px;
     font-size: 22px;
     color: #444;
-    margin-bottom: 10px;
 }
 
 .ingredientes ul,
 .paso-a-paso ol {
+    margin: 0;
     padding-left: 20px;
     color: #333;
 }
 
 .ingredientes li,
 .paso-a-paso li {
-    margin-bottom: 8px;
+    margin-bottom: 10px;
     line-height: 1.6;
 }
 
+/* === Animación === */
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -86,8 +84,8 @@
     }
 }
 
-/* Responsive */
-@media (max-width: 600px) {
+/* === Responsivo === */
+@media (max-width: 768px) {
     .receta-header {
         flex-direction: column;
         align-items: flex-start;
@@ -101,21 +99,4 @@
     .receta-contenido {
         grid-template-columns: 1fr;
     }
-}
-
-.boton-recetas {
-    display: block;
-    margin: 20px auto;
-    padding: 12px 24px;
-    background-color: #f4511e;
-    color: #fff;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background 0.3s;
-}
-
-.boton-recetas:hover {
-    background-color: #d84315;
 }
