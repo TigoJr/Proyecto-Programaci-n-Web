@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
 
-* {
+.login-modal * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -8,29 +8,20 @@
 }
 
 :root {
-    --color-primario: #925FE2;
-    --color-secundario: #6D4EA1;
-    --color-fondo: #D9F7C2;
+    --color-primario: #FF7F27;
+    --color-secundario: #CC6520;
+    --color-fondo: #FFF5E6;
     --color-fondo-form: #FFFFFF;
     --color-texto-primario: #000000;
     --color-texto-secundario: #656565;
-    --color-borde: #CDCDCD;
+    --color-borde: #FFC489;
     --color-boton-texto: #FFFFFF;
     --color-icon-google: #DB4437;
     --color-icon-facebook: #4267B2;
-    --color-titulo: #F7F3FA;
+    --color-titulo: #FFF9F0;
 }
 
-body {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    height: 100vh;
-    background-color: var(--color-fondo);
-}
-
-.container {
+.login-modal .container {
     display: grid;
     grid-template-columns: 4.2fr 5fr 0.8fr;
     width: 57.27rem;
@@ -38,25 +29,25 @@ body {
     align-items: center;
 }
 
-.formularios-container {
+.login-modal .formularios-container {
     height: 100%;
     background-color: var(--color-fondo-form);
     overflow: hidden;
 }
 
-.formularios {
+.login-modal .formularios {
     transition: transform 0.5s ease;
 }
 
-.formularios.activo {
+.login-modal .formularios.activo {
     transform: translateY(-50%);
 }
 
-form {
+.login-modal form {
     padding: 1.8rem;
 }
 
-form p {
+.login-modal form p {
     font-size: 0.85rem;
     font-weight: 500;
     color: var(--color-texto-secundario);
@@ -64,57 +55,58 @@ form p {
     margin-bottom: 1.8rem;
 }
 
-form p a,
-form .olvidado a {
+.login-modal form p a,
+.login-modal form .olvidado a {
     color: var(--color-primario);
     font-weight: 700;
 }
 
-.entrada-container {
+.login-modal .entrada-container {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
     margin-bottom: 1.2rem;
 }
 
-.entrada-container input {
+.login-modal .entrada-container input {
     padding: 0.7rem;
     border: 2px solid var(--color-borde);
     border-radius: 0.4rem;
     outline: none;
+    width: 100%;
 }
 
-.entrada-container a,
-.entrada-container label {
+.login-modal .entrada-container a,
+.login-modal .entrada-container label {
     font-size: 0.8rem;
     font-weight: 600;
 }
 
-.entrada-container a {
+.login-modal .entrada-container a {
     color: var(--color-texto-primario);
 }
 
-.entrada-container .olvidado {
+.login-modal .entrada-container .olvidado {
     display: flex;
     justify-content: space-between;
 }
 
-.recuerdame {
+.login-modal .recuerdame {
     display: flex;
     gap: 0.3rem;
     margin-bottom: 1.7rem;
 }
 
-.recuerdame label {
+.login-modal .recuerdame label {
     font-size: 0.8rem;
     font-weight: 500;
     color: var(--color-texto-secundario);
 }
 
-form button {
+.login-modal form button {
     width: 100%;
     padding: 0.9rem 0;
-    background-color: var(--color-secundario);
+    background-color: var(--color-primario);
     color: var(--color-boton-texto);
     font-weight: 500;
     border: none;
@@ -123,11 +115,11 @@ form button {
     cursor: pointer;
 }
 
-form .registrar-btn {
+.login-modal form .registrar-btn {
     margin-top: 1.5rem;
 }
 
-.linea-texto {
+.login-modal .linea-texto {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -137,21 +129,21 @@ form .registrar-btn {
     margin-bottom: 1.3rem;
 }
 
-.linea-texto::before,
-.linea-texto::after {
+.login-modal .linea-texto::before,
+.login-modal .linea-texto::after {
     content: '';
     flex: 1;
     border-bottom: 1px solid var(--color-borde);
     margin: 0 0.6rem;
 }
 
-.otro-login {
+.login-modal .otro-login {
     display: flex;
     justify-content: center;
     gap: 1rem;
 }
 
-.otro-login a {
+.login-modal .otro-login a {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -163,23 +155,23 @@ form .registrar-btn {
     text-decoration: none;
 }
 
-.otro-login img {
+.login-modal .otro-login img {
     width: 1rem;
 }
 
-.otro-login .google {
+.login-modal .otro-login .google {
     border: 1px solid var(--color-icon-google);
     color: var(--color-icon-google);
     cursor: pointer;
 }
 
-.otro-login .facebook {
+.login-modal .otro-login .facebook {
     border: 1px solid var(--color-icon-facebook);
     color: var(--color-icon-facebook);
     cursor: pointer;
 }
 
-.banner {
+.login-modal .banner {
     position: relative;
     height: 115%;
     overflow: hidden;
@@ -187,68 +179,69 @@ form .registrar-btn {
     background-color: var(--color-primario);
 }
 
-.banner h1 {
+.login-modal .banner h1 {
     color: var(--color-titulo);
     font-size: 3rem;
     line-height: 3rem;
 }
 
-.banner h1 span {
+.login-modal .banner h1 span {
     display: block;
     font-weight: 500;
 }
 
-.banner p {
+.login-modal .banner p {
     color: var(--color-fondo-form);
     font-size: 0.8rem;
     margin-top: 1rem;
 }
 
-.forma {
+.login-modal .forma {
     background-color: #FFFFFF;
     border-radius: 50%;
     opacity: 0.2;
     position: absolute;
 }
 
-.forma1 {
+.login-modal .forma1 {
     height: 12.5rem;
     width: 12.5rem;
     left: 20rem;
     top: 1.25rem;
 }
 
-.forma2 {
+.login-modal .forma2 {
     height: 28rem;
     width: 28rem;
     bottom: -10rem;
     right: -10rem;
 }
 
-.forma3 {
+.login-modal .forma3 {
     height: 15rem;
     width: 18rem;
     left: -10rem;
     top: 10.5rem;
 }
 
-.banner img {
+.login-modal .banner img {
     position: absolute;
     bottom: 0;
-    left: 1.4rem;
+    left: 1.53rem;
     width: 95%;
 }
 
-.barra-lateral {
+.login-modal .barra-lateral {
     background-color: var(--color-fondo-form);
     display: flex;
     flex-direction: column;
     height: 100%;
+    width: 100%;
     position: relative;
     user-select: none;
 }
 
-.barra-lateral::after {
+.login-modal .barra-lateral::after {
     content: '';
     background-color: var(--color-primario);
     height: 50%;
@@ -259,11 +252,11 @@ form .registrar-btn {
     transition: top 0.5s ease;
 }
 
-.barra-lateral.activo::after {
+.login-modal .barra-lateral.activo::after {
     top: 50%;
 }
 
-.barra-lateral .signo {
+.login-modal .barra-lateral .signo {
     width: 100%;
     height: 100%;
     display: flex;
@@ -274,31 +267,74 @@ form .registrar-btn {
     cursor: pointer;
 }
 
-.barra-lateral img {
+.login-modal .barra-lateral img {
     width: 1.5rem;
 }
 
-.barra-lateral span {
+.login-modal .barra-lateral span {
     color: var(--color-texto-secundario);
     font-size: 0.8rem;
     line-height: 0.5rem;
 }
 
 @keyframes desplazar {
-    from {opacity: 0; transform: translateX(-100%);}
-    to {opacity: 1; transform: translateX(0);}
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 @keyframes rebotar-arriba {
-    0%{transform: translateY(0);}
-    20%{transform: translateY(7px);}
-    40%{transform: translateY(-2px);}
-    60%{transform: translateY(0);}
+    0% {
+        transform: translateY(0);
+    }
+
+    20% {
+        transform: translateY(7px);
+    }
+
+    40% {
+        transform: translateY(-2px);
+    }
+
+    60% {
+        transform: translateY(0);
+    }
 }
 
 @keyframes rebotar-abajo {
-    0%{transform: translateY(0);}
-    20%{transform: translateY(7px);}
-    40%{transform: translateY(-2px);}
-    60%{transform: translateY(0);}
+    0% {
+        transform: translateY(0);
+    }
+
+    20% {
+        transform: translateY(7px);
+    }
+
+    40% {
+        transform: translateY(-2px);
+    }
+
+    60% {
+        transform: translateY(0);
+    }
+}
+
+@media (max-width: 700px),
+(max-height: 657px) {
+    .login-modal .banner,
+    .login-modal .barra-lateral {
+        display: none;
+    }
+
+    .login-modal .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }

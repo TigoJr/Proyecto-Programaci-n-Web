@@ -3,6 +3,8 @@ const menuEstatico = document.querySelectorAll('.menu-estatico');
 const barraLateral = document.getElementById('barra-lateral');
 const barraLateralBtn = document.getElementById('barra-lateral-btn');
 const menuBtn = document.getElementById('menu-btn');
+const loginBtn = document.getElementById('login-btn');
+const modal = document.getElementById('modal-login');
 
 barraLateralBtn.addEventListener('click', () => {
     document.body.classList.toggle('barra-lateral-oculto');
@@ -11,7 +13,8 @@ barraLateralBtn.addEventListener('click', () => {
 menuBtn.addEventListener('click', () => {
     barraLateral.classList.toggle('minimizar');
     document.body.classList.toggle('barra-minimizada');
-    console.log("Barra lateral minimizada:", barraLateral.classList.contains('minimizar'));
+
+    actualizarBotonLogin();
 });
 
 
@@ -58,13 +61,68 @@ menuEstatico.forEach((menu) => {
     })
 });
 
+function actualizarBotonLogin() {
+    const minimizada = barraLateral.classList.contains('minimizar');
+
+    if (minimizada) {
+        loginBtn.classList.add('mini');
+        loginBtn.innerHTML = `<i class='bx bx-user'></i>`;
+    } else {
+        loginBtn.classList.remove('mini');
+        loginBtn.textContent = 'INICIAR SESIÓN';
+    }
+}
+
 function verificarTamano() {
     barraLateral.classList.remove('minimizar');
 }
 
-document.querySelector('.login-btn').addEventListener('click', function () {
-    window.location.href = 'login.html';
+loginBtn.addEventListener('click', async () => {
+    if (!modal.querySelector('.login-modal')) {
+        try {
+            const response = await fetch('login-contenido.html');
+            const html = await response.text();
+
+            // Insertar contenido dentro de un contenedor con clase .login-modal
+            modal.querySelector('.modal-contenido').insertAdjacentHTML('beforeend', `
+                    <div class="login-modal">
+                        ${html}
+                    </div>
+                `);
+
+            // Cargar CSS si no está
+            if (!document.querySelector('link[href="CSS/login-modal.css"]')) {
+                const css = document.createElement('link');
+                css.rel = 'stylesheet';
+                css.href = 'CSS/login-modal.css';
+                document.head.appendChild(css);
+            }
+
+            // Cargar JS y ejecutar inicialización
+            const script = document.createElement('script');
+            script.src = 'JS/login-modal.js';
+            script.onload = () => inicializarLoginModal();
+            document.body.appendChild(script);
+        } catch (error) {
+            console.error('Error al cargar login-modal:', error);
+        }
+    }
+
+    modal.classList.remove('oculto');
 });
+
+// Cerrar modal con la X o clic fuera
+document.getElementById('cerrar-modal').addEventListener('click', () => {
+    modal.classList.add('oculto');
+});
+
+window.addEventListener('click', (e) => {
+    if (e.target === modal) {
+        modal.classList.add('oculto');
+    }
+});
+
+actualizarBotonLogin();
 
 verificarTamano();
 window.addEventListener('resize', verificarTamano);
