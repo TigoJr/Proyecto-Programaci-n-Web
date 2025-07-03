@@ -392,6 +392,11 @@
     justify-content: center;
     font-size: 1.5rem;
     color: var(--color-texto-secundario);
+    cursor: pointer;
+}
+
+.usuario-icon:hover {
+    color: var(--color-texto-primario);
 }
 
 .barra-lateral-btn {
