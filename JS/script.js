@@ -106,6 +106,7 @@ loginBtn.addEventListener('click', async () => {
                 inicializarValidacionLogin();   // Validación
             };
             document.body.appendChild(script);
+
         } catch (error) {
             console.error('Error al cargar login-modal:', error);
         }
@@ -118,6 +119,14 @@ document.getElementById('cerrar-modal').addEventListener('click', () => {
     modal.classList.add('oculto');
 });
 
+document.addEventListener('click', (e) => {
+    if (e.target.id === 'logout-btn') {
+        localStorage.removeItem('usuario');
+        location.reload(); // o puedes ocultar manualmente todo
+    }
+});
+
+
 window.addEventListener('click', (e) => {
     if (e.target === modal) {
         modal.classList.add('oculto');
@@ -128,3 +137,24 @@ actualizarBotonLogin();
 
 verificarTamano();
 window.addEventListener('resize', verificarTamano);
+
+function actualizarVistaUsuario(nombre, email) {
+    const loginBtn = document.getElementById('login-btn');
+    const menu = document.querySelector('.menu-footer ul');
+    const usuarioBox = document.querySelector('.usuario');
+    const usuarioNombre = usuarioBox?.querySelector('.nombre');
+    const usuarioEmail = usuarioBox?.querySelector('.email');
+
+    if (loginBtn) loginBtn.style.display = 'none';
+    if (menu) menu.style.display = 'block';
+    if (usuarioBox) usuarioBox.style.display = 'flex';
+
+    if (usuarioNombre) usuarioNombre.textContent = nombre;
+    if (usuarioEmail) usuarioEmail.textContent = email;
+}
+
+const datosUsuario = localStorage.getItem('usuario');
+if (datosUsuario) {
+    const { nombre, email } = JSON.parse(datosUsuario);
+    actualizarVistaUsuario(nombre, email);
+}

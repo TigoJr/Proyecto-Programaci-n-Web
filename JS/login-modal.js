@@ -96,6 +96,12 @@ function inicializarValidacionLogin() {
             if (usuarioNombre) usuarioNombre.textContent = nombre;
             if (usuarioEmail) usuarioEmail.textContent = email;
 
+            localStorage.setItem('usuario', JSON.stringify({
+                nombre: nombre,
+                email: email
+            }));
+
+            actualizarVistaUsuario(nombre, email);
             // Cerrar modal
             const modal = document.getElementById('modal-login');
             if (modal) modal.classList.add('oculto');
@@ -143,6 +149,13 @@ function inicializarValidacionLogin() {
 
             if (usuarioNombre) usuarioNombre.textContent = nombre;
             if (usuarioEmail) usuarioEmail.textContent = email;
+
+            localStorage.setItem('usuario', JSON.stringify({
+                nombre: nombre,
+                email: email
+            }));
+
+            actualizarVistaUsuario(nombre, email);
 
             const modal = document.getElementById('modal-login');
             if (modal) modal.classList.add('oculto');
