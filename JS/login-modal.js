@@ -52,3 +52,121 @@ function inicializarLoginModal() {
         }, 300);
     }
 }
+
+// VALIDACIÓN DE FORMULARIOS
+function inicializarValidacionLogin() {
+    const formLogin = document.getElementById('iniciar-sesion');
+    const formRegistro = document.getElementById('registrarse');
+
+    if (!formLogin || !formRegistro) return;
+
+    formLogin.addEventListener('submit', (e) => {
+        e.preventDefault();
+        limpiarErrores(formLogin);
+
+        const emailInput = formLogin.querySelector('input[name="email"]');
+        const passInput = formLogin.querySelector('input[name="password"]');
+
+        let valido = true;
+
+        if (!validarEmail(emailInput.value.trim())) {
+            mostrarError(emailInput, "Correo electrónico no válido.");
+            valido = false;
+        }
+
+        if (passInput.value.trim().length < 6) {
+            mostrarError(passInput, "La contraseña debe tener al menos 6 caracteres.");
+            valido = false;
+        }
+
+        if (valido) {
+            const email = emailInput.value;
+            const nombre = email.split('@')[0]; // Nombre "simulado" desde el email
+            // Actualizar vista del menú del index
+            const loginBtn = document.getElementById('login-btn');
+            const menu = document.querySelector('.menu-footer ul');
+            const usuarioBox = document.querySelector('.usuario');
+            const usuarioNombre = usuarioBox?.querySelector('.nombre');
+            const usuarioEmail = usuarioBox?.querySelector('.email');
+
+            if (loginBtn) loginBtn.style.display = 'none';
+            if (menu) menu.style.display = 'block';
+            if (usuarioBox) usuarioBox.style.display = 'flex';
+
+            if (usuarioNombre) usuarioNombre.textContent = nombre;
+            if (usuarioEmail) usuarioEmail.textContent = email;
+
+            // Cerrar modal
+            const modal = document.getElementById('modal-login');
+            if (modal) modal.classList.add('oculto');
+        }
+    });
+
+    formRegistro.addEventListener('submit', (e) => {
+        e.preventDefault();
+        limpiarErrores(formRegistro);
+
+        const nombreInput = formRegistro.querySelector('input[name="nombre"]');
+        const emailInput = formRegistro.querySelector('input[name="email"]');
+        const passInput = formRegistro.querySelector('input[name="password"]');
+
+        let valido = true;
+
+        if (nombreInput.value.trim() === "") {
+            mostrarError(nombreInput, "El nombre es obligatorio.");
+            valido = false;
+        }
+
+        if (!validarEmail(emailInput.value.trim())) {
+            mostrarError(emailInput, "Correo electrónico no válido.");
+            valido = false;
+        }
+
+        if (passInput.value.trim().length < 6) {
+            mostrarError(passInput, "La contraseña debe tener al menos 6 caracteres.");
+            valido = false;
+        }
+
+        if (valido) {
+            const email = emailInput.value;
+            const nombre = nombreInput.value; // Nombre "simulado" desde el email
+
+            const loginBtn = document.getElementById('login-btn');
+            const menu = document.querySelector('.menu-footer ul');
+            const usuarioBox = document.querySelector('.usuario');
+            const usuarioNombre = usuarioBox?.querySelector('.nombre');
+            const usuarioEmail = usuarioBox?.querySelector('.email');
+
+            if (loginBtn) loginBtn.style.display = 'none';
+            if (menu) menu.style.display = 'block';
+            if (usuarioBox) usuarioBox.style.display = 'flex';
+
+            if (usuarioNombre) usuarioNombre.textContent = nombre;
+            if (usuarioEmail) usuarioEmail.textContent = email;
+
+            const modal = document.getElementById('modal-login');
+            if (modal) modal.classList.add('oculto');
+        }
+
+    });
+
+    function validarEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    function mostrarError(input, mensaje) {
+        input.classList.add('error');
+        const errorSpan = input.parentElement.querySelector('.error-msg');
+        if (errorSpan) {
+            errorSpan.textContent = mensaje;
+        }
+    }
+
+    function limpiarErrores(formulario) {
+        const inputs = formulario.querySelectorAll('input');
+        inputs.forEach(input => input.classList.remove('error'));
+
+        const errores = formulario.querySelectorAll('.error-msg');
+        errores.forEach(span => span.textContent = '');
+    }
+}

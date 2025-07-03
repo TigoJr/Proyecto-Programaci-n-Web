@@ -1,28 +1,37 @@
 <div class="container" id="container">
     <div class="formularios-container">
         <div class="formularios" id="formularios">
+            <!-- FORMULARIO DE INICIO DE SESIÓN -->
             <form action="" id="iniciar-sesion">
                 <h2>Iniciar sesión</h2>
                 <p>¿No tienes una cuenta? <a href="#" id="registrar-link">Regístrate</a></p>
+
                 <div class="entrada-container">
                     <label for="login-email">Email</label>
-                    <input id="login-email" type="email" placeholder="Correo Electrónico">
+                    <input id="login-email" name="email" type="email" placeholder="Correo Electrónico">
+                    <span class="error-msg"></span>
                 </div>
+
                 <div class="entrada-container">
                     <div class="olvidado">
                         <label for="login-password">Contraseña</label>
                         <a href="#">¿Olvidaste tu contraseña?</a>
                     </div>
-                    <input id="login-password" type="password" placeholder="Contraseña">
+                    <input id="login-password" name="password" type="password" placeholder="Contraseña">
+                    <span class="error-msg"></span>
                 </div>
+
                 <div class="recuerdame">
                     <input type="checkbox" id="login-checkbox">
                     <label for="login-checkbox">Recuérdame</label>
                 </div>
+
                 <button class="modal-login-btn">INICIAR SESIÓN</button>
+
                 <div class="linea-texto">
                     <span>o iniciar sesión con</span>
                 </div>
+
                 <div class="otro-login">
                     <a href="#" class="google">
                         <img src="iconos/google.svg" alt="">
@@ -34,31 +43,42 @@
                     </a>
                 </div>
             </form>
+
+            <!-- FORMULARIO DE REGISTRO -->
             <form action="" id="registrarse">
                 <h2>Registro</h2>
                 <p>¿Ya tienes una cuenta? <a href="#" id="iniciar-sesion-link">Iniciar sesión</a></p>
+
                 <div class="entrada-container">
                     <label for="name">Nombre</label>
-                    <input id="name" type="text" placeholder="Nombre">
+                    <input id="name" name="nombre" type="text" placeholder="Nombre">
+                    <span class="error-msg"></span>
                 </div>
+
                 <div class="entrada-container">
                     <label for="registrar-email">Email</label>
-                    <input id="registrar-email" type="email" placeholder="Correo Electrónico">
+                    <input id="registrar-email" name="email" type="email" placeholder="Correo Electrónico">
+                    <span class="error-msg"></span>
                 </div>
+
                 <div class="entrada-container">
                     <div class="olvidado">
                         <label for="registrar-password">Contraseña</label>
                     </div>
-                    <input id="registrar-password" type="password" placeholder="Contraseña">
+                    <input id="registrar-password" name="password" type="password" placeholder="Contraseña">
+                    <span class="error-msg"></span>
                 </div>
+
                 <div class="recuerdame">
                     <input type="checkbox" id="registrar-checkbox">
                     <label for="registrar-checkbox">Recuérdame</label>
                 </div>
+
                 <button class="modal-registrar-btn">REGISTRAR</button>
             </form>
         </div>
     </div>
+
     <div class="banner">
         <div class="forma forma1"></div>
         <div class="forma forma2"></div>
@@ -69,6 +89,7 @@
             <img src="Imagenes/banner_cocina.png" alt="">
         </section>
     </div>
+
     <div class="barra-lateral" id="barra-lateral">
         <div class="signo" id="btn-inicio-sesion">
             <img src="iconos/crown.svg" alt="">

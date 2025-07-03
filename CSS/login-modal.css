@@ -277,6 +277,18 @@
     line-height: 0.5rem;
 }
 
+.login-modal input.error {
+    border-color: red;
+}
+
+.login-modal .error-msg {
+    font-size: 0.7rem;
+    color: red;
+    height: 0.9rem;
+    margin-top: -0.5rem;
+    margin-bottom: -0.6rem;
+}
+
 @keyframes desplazar {
     from {
         opacity: 0;
@@ -290,39 +302,17 @@
 }
 
 @keyframes rebotar-arriba {
-    0% {
-        transform: translateY(0);
-    }
-
-    20% {
-        transform: translateY(7px);
-    }
-
-    40% {
-        transform: translateY(-2px);
-    }
-
-    60% {
-        transform: translateY(0);
-    }
+    0% {transform: translateY(0);}
+    20% { transform: translateY(7px);}
+    40% { transform: translateY(-2px);}
+    60% { transform: translateY(0);}
 }
 
 @keyframes rebotar-abajo {
-    0% {
-        transform: translateY(0);
-    }
-
-    20% {
-        transform: translateY(7px);
-    }
-
-    40% {
-        transform: translateY(-2px);
-    }
-
-    60% {
-        transform: translateY(0);
-    }
+    0% {transform: translateY(0);}
+    20% { transform: translateY(7px);}
+    40% { transform: translateY(-2px);}
+    60% { transform: translateY(0);}
 }
 
 @media (max-width: 928px),
@@ -331,7 +321,6 @@
     .login-modal .barra-lateral {
         display: none;
     }
-
     .login-modal .container {
         display: flex;
         justify-content: center;

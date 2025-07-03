@@ -101,7 +101,10 @@ loginBtn.addEventListener('click', async () => {
             // Cargar JS y ejecutar inicialización
             const script = document.createElement('script');
             script.src = 'JS/login-modal.js';
-            script.onload = () => inicializarLoginModal();
+            script.onload = () => {
+                inicializarLoginModal();         // Animaciones
+                inicializarValidacionLogin();   // Validación
+            };
             document.body.appendChild(script);
         } catch (error) {
             console.error('Error al cargar login-modal:', error);
