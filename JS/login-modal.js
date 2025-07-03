@@ -81,7 +81,7 @@ function inicializarValidacionLogin() {
 
         if (valido) {
             const email = emailInput.value;
-            const nombre = email.split('@')[0]; // Nombre "simulado" desde el email
+            const nombre = email.split('@')[0];
             // Actualizar vista del menú del index
             const loginBtn = document.getElementById('login-btn');
             const menu = document.querySelector('.menu-footer ul');
