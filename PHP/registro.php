@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 
 header('Content-Type: application/json');
 
-require_once 'conexion.php'; //Usamos archivo externo de conexión
+require_once 'conexion.php';
 
 $input = json_decode(file_get_contents("php://input"), true);
 $nombre = $input['nombre'] ?? '';

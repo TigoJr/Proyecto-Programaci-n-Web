@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 header('Content-Type: application/json');
 session_start();
 
-require_once 'conexion.php'; //Usamos archivo externo de conexión
+require_once 'conexion.php';
 
 $input = json_decode(file_get_contents("php://input"), true);
 $email = $input['email'] ?? '';

@@ -52,7 +52,7 @@ function inicializarRegistro() {
                 const loginResult = await loginResponse.json();
 
                 if (loginResult.success) {
-                    location.reload(); //recarga y dispara verificar-sesion.php
+                    location.reload();
                 } else {
                     alert('Registro correcto, pero error al iniciar sesión.');
                 }

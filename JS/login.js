@@ -37,7 +37,7 @@ function inicializarLogin() {
 
             if (result.success) {
                 console.log('Inicio de sesión exitoso. Recargando...');
-                location.reload(); // Dispara verificar-sesion.php al cargar de nuevo
+                location.reload();
             } else {
                 alert(result.message);
             }

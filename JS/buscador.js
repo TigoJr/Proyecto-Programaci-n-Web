@@ -5,13 +5,11 @@ document.addEventListener("DOMContentLoaded", function () {
     const destacados = document.querySelectorAll(".busquedas-populares .elemento.busqueda span");
     const enlaceRecetarios = document.getElementById("ver-recetarios");
 
-    // Función para extraer URL del background-image
     function obtenerURLDeFondo(style) {
         const match = style.match(/url\(["']?(.*?)["']?\)/);
         return match ? match[1] : "";
     }
 
-    // Función para renderizar receta
     function renderizarReceta(nombre, imagen, autor, ingredientes, pasos) {
         const receta = document.createElement("div");
         receta.classList.add("receta-detalle");
@@ -44,7 +42,6 @@ document.addEventListener("DOMContentLoaded", function () {
         resultado.appendChild(receta);
     }
 
-    // Búsqueda en tiempo real
     buscador.addEventListener("input", function () {
         const texto = buscador.value.toLowerCase().trim();
         resultado.innerHTML = "";
@@ -84,7 +81,6 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 
-    // Click en búsquedas populares
     destacados.forEach(destacado => {
         destacado.parentElement.addEventListener("click", function (e) {
             e.preventDefault();
@@ -108,7 +104,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Click en cada receta individual
     document.querySelectorAll(".elemento-receta .elemento").forEach(elemento => {
         elemento.addEventListener("click", function (e) {
             e.preventDefault();
@@ -124,7 +119,6 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Mostrar todo al hacer clic en "Recetarios"
     if (enlaceRecetarios) {
         enlaceRecetarios.addEventListener("click", function (e) {
             e.preventDefault();

@@ -59,7 +59,6 @@ document.addEventListener("DOMContentLoaded", () => {
                 });
             });
 
-            // Ocultar todas las secciones de búsqueda originales
             document.querySelectorAll('section[class^="busquedas-"]').forEach(seccion => {
                 seccion.style.display = "none";
             });

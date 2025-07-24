@@ -1,13 +1,10 @@
 <?php
 session_start();
 
-// Eliminar todas las variables de sesión
 $_SESSION = [];
 
-// Destruir la sesión
 session_destroy();
 
-// También puedes eliminar la cookie de sesión si existe
 if (ini_get("session.use_cookies")) {
     $params = session_get_cookie_params();
     setcookie(
@@ -21,6 +18,5 @@ if (ini_get("session.use_cookies")) {
     );
 }
 
-// Retornar respuesta JSON
 header('Content-Type: application/json');
 echo json_encode(['success' => true, 'message' => 'Sesión cerrada correctamente']);
