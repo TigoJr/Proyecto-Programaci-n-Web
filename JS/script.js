@@ -17,7 +17,6 @@ menuBtn.addEventListener('click', () => {
     actualizarBotonLogin();
 });
 
-
 menusDesplegables.forEach((menu) => {
     menu.addEventListener('click', () => {
         const subMenu = menu.querySelector('.sub-menu');
@@ -83,14 +82,12 @@ loginBtn.addEventListener('click', async () => {
             const response = await fetch('login-contenido.html');
             const html = await response.text();
 
-            // Insertar contenido dentro de un contenedor con clase .login-modal
             modal.querySelector('.modal-contenido').insertAdjacentHTML('beforeend', `
-                    <div class="login-modal">
-                        ${html}
-                    </div>
-                `);
+                <div class="login-modal">
+                    ${html}
+                </div>
+            `);
 
-            // Cargar CSS si no está
             if (!document.querySelector('link[href="CSS/login-modal.css"]')) {
                 const css = document.createElement('link');
                 css.rel = 'stylesheet';
@@ -98,14 +95,29 @@ loginBtn.addEventListener('click', async () => {
                 document.head.appendChild(css);
             }
 
-            // Cargar JS y ejecutar inicialización
-            const script = document.createElement('script');
-            script.src = 'JS/login-modal.js';
-            script.onload = () => {
-                inicializarLoginModal();         // Animaciones
-                inicializarValidacionLogin();   // Validación
+            const modalInitScript = document.createElement('script');
+            modalInitScript.src = 'JS/modal-init.js';
+            document.body.appendChild(modalInitScript);
+
+            const registroScript = document.createElement('script');
+            registroScript.src = 'JS/registro.js';
+            registroScript.onload = () => {
+                inicializarRegistro();
             };
-            document.body.appendChild(script);
+            document.body.appendChild(registroScript);
+
+            const loginScript = document.createElement('script');
+            loginScript.src = 'JS/login.js';
+            loginScript.onload = () => {
+                console.log("login.js cargado dinámicamente");
+                if (typeof inicializarLogin === 'function') {
+                    inicializarLogin();
+                } else {
+                    console.warn("inicializarLogin no definida");
+                }
+            };
+            document.body.appendChild(loginScript);
+
 
         } catch (error) {
             console.error('Error al cargar login-modal:', error);
@@ -115,17 +127,17 @@ loginBtn.addEventListener('click', async () => {
     modal.classList.remove('oculto');
 });
 
-document.getElementById('cerrar-modal').addEventListener('click', () => {
-    modal.classList.add('oculto');
-});
-
 document.addEventListener('click', (e) => {
     if (e.target.id === 'logout-btn') {
-        localStorage.removeItem('usuario');
-        location.reload(); // o puedes ocultar manualmente todo
+        fetch('PHP/logout.php')
+            .then(() => location.reload())
+            .catch(error => console.error('Error al cerrar sesión:', error));
     }
 });
 
+document.getElementById('cerrar-modal').addEventListener('click', () => {
+    modal.classList.add('oculto');
+});
 
 window.addEventListener('click', (e) => {
     if (e.target === modal) {
@@ -134,11 +146,19 @@ window.addEventListener('click', (e) => {
 });
 
 actualizarBotonLogin();
-
 verificarTamano();
-window.addEventListener('resize', verificarTamano);
 
-function actualizarVistaUsuario(nombre, email) {
+fetch('PHP/verificar-sesion.php')
+    .then(res => res.json())
+    .then(data => {
+        if (data.logueado) {
+            const { nombre, email } = data.usuario;
+            mostrarUsuario(nombre, email);
+        }
+    })
+    .catch(err => console.error('Error al verificar sesión:', err));
+
+function mostrarUsuario(nombre, email) {
     const loginBtn = document.getElementById('login-btn');
     const menu = document.querySelector('.menu-footer ul');
     const usuarioBox = document.querySelector('.usuario');
@@ -153,8 +173,4 @@ function actualizarVistaUsuario(nombre, email) {
     if (usuarioEmail) usuarioEmail.textContent = email;
 }
 
-const datosUsuario = localStorage.getItem('usuario');
-if (datosUsuario) {
-    const { nombre, email } = JSON.parse(datosUsuario);
-    actualizarVistaUsuario(nombre, email);
-}
+window.addEventListener('resize', verificarTamano);
